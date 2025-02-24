@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+         let n = 60
+         window.onload = function(){
+            setInterval(cutdown,1000)
+            function cutdown(){
+               if(n>0){
+                  n--
+                  document.getElementById('weo').innerHTML = n
+               }
+            }
+         }
+     </script>
+  </head>
+  <body>
+     
+     <div id="weo">60</div>
+  </body>
+  </html>
