@@ -51,8 +51,6 @@ class MinHeap {
             //注意这一步
             i = p
         }
-
-
     }
 
     pop(){
