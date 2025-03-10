@@ -1,6 +1,6 @@
-import { ListNode } from "./listnode";
+import { ListNode } from "../../listnode";
 
-// 快慢指针实现的链表归并排序
+// 快慢指针实现的链表归并排序 快指针找到链表的中点
 function sortList(head: ListNode | null): ListNode | null {
     // 链表为空或只有一个节点，直接返回
     if (!head || !head.next) {
@@ -33,7 +33,7 @@ function sortList(head: ListNode | null): ListNode | null {
     return merge(sortedLeft, sortedRight);
 }
 
-// 合并两个已排序链表
+// 合并两个已排序链表 新建dummy节点，一个一个按顺序放在其后面，然后判断剩下的节点
 function merge(left: ListNode | null, right: ListNode | null): ListNode | null {
     let dummy = new ListNode(0);  // 虚拟头节点
     let cur = dummy;
