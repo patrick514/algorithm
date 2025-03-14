@@ -47,7 +47,8 @@ function lowestCommonAncestor(
   if (left && right) {
     return root;
   }
-  //前面过了，说明p，q都在一边子树上 都在左
+  //前面过了，说明p，q都在一边子树上 
+  //都在左
   if (left) {
     return left;
   }

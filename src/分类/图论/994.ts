@@ -18,6 +18,7 @@ function orangesRotting(grid: number[][]): number {
     while (fresh && q.length) {
         ans++;
         let tmp:[number,number][] = q;
+        //已经腐烂的橘子就不用判断了
         q = [];//每次都判断新腐烂的橘子
 
         for (const [x, y] of tmp) {
