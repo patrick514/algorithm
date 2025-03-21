@@ -1,5 +1,5 @@
 function canJump(nums: number[]): boolean {
-    let pass = false
+    // let pass = false
 
 
     for(let i = nums.length - 1;i >= 0;i--){
@@ -11,7 +11,7 @@ function canJump(nums: number[]): boolean {
         return true
     }
 
-    return pass
+    return false
 };
 console.log(canJump([2, 3, 1, 1, 4]))
 console.log(canJump([3, 2, 1, 0, 4]))

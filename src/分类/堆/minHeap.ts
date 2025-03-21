@@ -3,8 +3,8 @@
  * 入堆  最后一个向上交换
  * 出堆  最后一个与堆顶交换  弹出 最后一个 与子节点最大的交换
  */
-class MinHeap {
-  heap: number[][];
+export class MinHeap {
+  heap: number[];
   constructor() {
     this.heap = [];
   }
@@ -28,8 +28,8 @@ class MinHeap {
     return this.heap[0];
   }
 
-  push([key, val]: [number, number]) {
-    this.heap.push([key, val]);
+  push(val: number) {
+    this.heap.push(val);
     this.siftUp(this.heap.length - 1);
   }
 
@@ -37,7 +37,7 @@ class MinHeap {
     while (true) {
       const p = this.parent(i);
       /// 父节点  小于  子节点
-      if (p < 0 || this.heap[p][1] <= this.heap[i][1]) {
+      if (p < 0 || this.heap[p] <= this.heap[i]) {
         break;
       }
       this.swap(p, i);
@@ -64,10 +64,10 @@ class MinHeap {
       const r = this.right(i);
       let min = i;
       //找左右孩子最小的 小根堆
-      if (l < this.heap.length && this.heap[l][1] < this.heap[min][1]) {
+      if (l < this.heap.length && this.heap[l] < this.heap[min]) {
         min = l;
       }
-      if (r < this.heap.length && this.heap[r][1] < this.heap[min][1]) {
+      if (r < this.heap.length && this.heap[r] < this.heap[min]) {
         min = r;
       }
       //都没有当前小 结束
@@ -85,34 +85,3 @@ class MinHeap {
     this.heap[j] = temp;
   }
 }
-
-function topKFrequent(nums: number[], k: number): number[] {
-  const cntMap = new Map();
-  for (const i of nums) {
-    if (cntMap.has(i)) {
-      cntMap.set(i, cntMap.get(i) + 1);
-    } else {
-      cntMap.set(i, 1);
-    }
-  }
-  const ans: number[] = [];
-
-  let heap = new MinHeap();
-  for (const [key, val] of cntMap) {
-    if (heap.heap.length === k) {
-      if (val > heap.heap[0][1]) {
-        heap.pop();
-        heap.push([key, val]);
-      }
-    } else {
-      heap.push([key, val]);
-    }
-  }
-  while (heap.heap.length > 0) {
-    ans.push(heap.heap[0][0]);
-    heap.pop();
-  }
-  return ans;
-}
-
-topKFrequent([4, 1, -1, 2, -1, 2, 3], 2);
