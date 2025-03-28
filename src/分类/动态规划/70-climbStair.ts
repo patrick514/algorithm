@@ -23,6 +23,18 @@
 
 //递归 + 记忆化搜索
 function climbStairs(n: number): number {
-  
+  const dp: number[] = Array(n + 1).fill(0);
+
+  const dfs = (i: number): number => {
+    if (i === 1) return 1;
+    if (i === 2) return 2;
+
+    if (dp[i] !== 0) return dp[i];
+
+    dp[i] = dfs(i - 1) + dfs(i - 2);
+
+    return dp[i];
+  };
+  return dfs(n);
 }
-console.log(climbStairs(35))
+console.log(climbStairs(3));
