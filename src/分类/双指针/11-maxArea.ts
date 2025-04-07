@@ -26,20 +26,37 @@
 // console.log(maxArea([1, 1]))
 
 //双指针 注意是高度乘坐标轴
+// function maxArea(height: number[]): number {
+//     let ans = 0;
+//     let left = 0;
+//     let right =height.length-1;
+//     while(left < right){
+//         let h = Math.min(height[left],height[right]);
+//         let container =h*(right-left);
+//         ans = Math.max(ans,container);
+//         if(height[left] < height[right]){
+//             left++;
+//         }else{
+//             right--;
+//         }
+//     }
+//     return ans;
+// };
+
 function maxArea(height: number[]): number {
-    let ans = 0;
-    let left = 0;
-    let right =height.length-1;
+    let left = 0
+    let right = height.length -1
+    let ans = 0
     while(left < right){
-        let h = Math.min(height[left],height[right]);
-        let container =h*(right-left);
-        ans = Math.max(ans,container);
-        if(height[left] < height[right]){
-            left++;
+        let h = Math.min(height[left],height[right])
+        let area = h * (right - left)
+        ans = Math.max(ans,area)
+        if(height[left] > height[right]){
+            right--
         }else{
-            right--;
+            left++
         }
     }
-    return ans;
+    return ans
 };
 maxArea([1, 8, 6, 2, 5, 4, 8, 3, 7])
