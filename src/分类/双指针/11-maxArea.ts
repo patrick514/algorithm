@@ -42,7 +42,7 @@
 //     }
 //     return ans;
 // };
-
+//很熟练 简单看看
 function maxArea(height: number[]): number {
     let left = 0
     let right = height.length -1
