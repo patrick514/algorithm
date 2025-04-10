@@ -24,15 +24,18 @@ function swap(nums: number[], i: number, j: number): void {
   nums[j] = tmp;
 }
 //选择数组中的某个元素作为“基准数”，将所有小于
-// 基准数的元素移到其左侧，而大于基准数的元素移到其右侧。
+//基准数的元素移到其左侧，而大于基准数的元素移到其右侧。
+//首先获得基准 然后递归左半 递归右半 分成无数个小块 递归到得出结果
 function partition(nums: number[], left: number, right: number) {
   let pivot = nums[left];
   let i = left + 1;
   let j = right;
   while (true) {
+    //在左边找大于基准的
     while (i <= j && nums[i] <= pivot) {
       i++;
     }
+    //在右边找小于基准的
     while (i <= j && nums[j] >= pivot) {
       j--;
     }
