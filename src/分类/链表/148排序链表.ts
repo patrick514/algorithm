@@ -1,4 +1,4 @@
-import { ListNode } from "../../listnode";
+import { ListNode } from "./listnode";
 
 // 快慢指针实现的链表归并排序 快指针找到链表的中点
 // function sortList(head: ListNode | null): ListNode | null {
@@ -107,6 +107,14 @@ function merge(left: ListNode | null, right: ListNode | null): ListNode | null {
   }
   return dummy.next;
 }
+
+
+
+
+
+
+
+
 // 测试函数
 function createLinkedList(arr: number[]): ListNode | null {
   const dummy = new ListNode(0);

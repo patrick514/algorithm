@@ -1,17 +1,21 @@
 
-class ListNode {
-    val: number
-    next: ListNode | null
-    constructor(val?: number, next?: ListNode | null) {
-        this.val = (val === undefined ? 0 : val)
-        this.next = (next === undefined ? null : next)
-    }
-}
+// class ListNode {
+//     val: number
+//     next: ListNode | null
+//     constructor(val?: number, next?: ListNode | null) {
+//         this.val = (val === undefined ? 0 : val)
+//         this.next = (next === undefined ? null : next)
+//     }
+// }
 
-
+/**
+ * 相交链表  使用哈希
+ * @param headA 
+ * @param headB 
+ * @returns 得到相交的节点 
+ */
 function getIntersectionNode(headA: ListNode | null, headB: ListNode | null): ListNode | null {
     const amap = new Map();
-    const bmap = new Map();
     let a = headA;
     let b = headB;
     while(a !== null){

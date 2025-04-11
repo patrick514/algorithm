@@ -1,5 +1,4 @@
-import { TreeNode } from "../../treenode";
-
+import { TreeNode } from "./treenode";
 // function levelOrder(root: TreeNode | null): number[][] {
 //     if (!root) {
 //         return []
@@ -28,6 +27,12 @@ import { TreeNode } from "../../treenode";
 //     return ans
 // };
 
+
+/**
+ * 两个数组
+ * @param root 
+ * @returns 
+ */
 function levelOrder(root: TreeNode | null): number[][] {
   let ans: number[][] = [];
   if (!root) {
@@ -52,6 +57,10 @@ function levelOrder(root: TreeNode | null): number[][] {
   }
   return ans;
 }
+
+/**
+ * 一个队列
+*/
 
 let node1 = new TreeNode(1);
 let node2 = new TreeNode(2);

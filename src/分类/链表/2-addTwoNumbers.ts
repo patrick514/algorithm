@@ -1,27 +1,12 @@
-// class ListNode {
-//   val: number;
-//   next: ListNode | null;
-//   constructor(val?: number, next?: ListNode | null) {
-//     this.val = val === undefined ? 0 : val;
-//     this.next = next === undefined ? null : next;
-//   }
-// }
+import {ListNode} from './listnode'
 
-class ListNode {
-  val: number;
-  next: ListNode | null;
-  constructor(val?: number, next?: ListNode | null) {
-    this.val = val === undefined ? 0 : val;
-    this.next = next === undefined ? null : next;
-  }
-}
+
 function addTwoNumbers(
   l1: ListNode | null,
   l2: ListNode | null
 ): ListNode | null {
   let head = new ListNode();
   let tail = head;
-  let tmp = 0;
   let carry = 0;
   while (l1 !== null || l2 !== null) {
     let x = l1 !== null ? l1.val : 0;

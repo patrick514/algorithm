@@ -1,5 +1,5 @@
 
-import {TreeNode } from '../../treenode'
+
 // function maxDepth(root: TreeNode | null): number {
 //     if(root === null)
 //         return 0
@@ -7,6 +7,8 @@ import {TreeNode } from '../../treenode'
 //     let rightdep = maxDepth(root.right)
 //     return Math.max(leftdep,rightdep) + 1
 // };
+
+import { TreeNode } from "./treenode"
 
 
 //递归  递归左子树的深度，递归右子树的深度，取最大加上root

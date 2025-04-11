@@ -7,6 +7,16 @@ class ListNode {
   }
 }
 
+/**
+ *pre <- 1    2    3    4    5
+ *      cur  nxt
+ * 
+ * cur.next = pre
+ * pre = cur
+ * cur = nxt
+ * @param head 
+ * @returns 反转链表
+ */
 function reverseList(head: ListNode | null): ListNode | null {
     let pre : ListNode | null = null
     let cur = head
@@ -16,6 +26,5 @@ function reverseList(head: ListNode | null): ListNode | null {
         pre = cur
         cur = nxt
     }
-
     return pre
 }

@@ -45,7 +45,11 @@
 
 //     return ans;
 // };
-
+/**
+ * 
+ * @param nums 
+ * @returns 最长连续
+ */
 function longestConsecutive(nums: number[]): number {
   const set = new Set(nums);
   let res = 0;
@@ -67,3 +71,6 @@ function longestConsecutive(nums: number[]): number {
 console.log(longestConsecutive([100, 4, 200, 1, 3, 2]));
 
 console.log(longestConsecutive([0, 3, 7, 2, 5, 8, 4, 6, 0, 1]));
+// 4
+
+// 9
