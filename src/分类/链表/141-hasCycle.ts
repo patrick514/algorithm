@@ -7,7 +7,7 @@ class ListNode {
   }
 }
 
-//使用快慢指针 快指针不为空，知道快慢指针在一个位置，则成环
+//使用快慢指针 快指针不为空，当快慢指针在一个位置，则成环
 function hasCycle(head: ListNode | null): boolean {
   if (!head || !head.next) {
     return false;
@@ -25,7 +25,7 @@ function hasCycle(head: ListNode | null): boolean {
   return true;
 }
 
-//使用哈希表 哈希表存储已经过的节点，如果当前节点已经过，则成环
+// // 使用哈希表 哈希表存储已经过的节点，如果当前节点已经过，则成环
 // function hasCycle(head: ListNode | null): boolean {
 //   if (!head || !head.next) {
 //     return false;

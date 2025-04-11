@@ -1,25 +1,6 @@
-import { ListNode } from "../listnode";
+import { ListNode } from "./listnode";
 
 function swapPairs(head: ListNode | null): ListNode | null {
-    
-  // if (!head || !head.next) {
-  //     return head
-  // }
-
-  // let dummy = new ListNode(0);
-  // dummy.next = head;
-  // let tmp = dummy;
-
-  // while(tmp.next !== null && tmp.next?.next !== null){
-  //     let left = tmp.next;
-  //     let right = tmp.next.next;
-  //     tmp.next = right;
-  //     left.next=  right.next;
-  //     right.next = left;
-  //     tmp = left;
-  // }
-
-  // return dummy.next;
   //用  dummy节点  作为tmp
   if (!head || !head.next) {
     return head;
@@ -31,7 +12,7 @@ function swapPairs(head: ListNode | null): ListNode | null {
     let left = tmp.next;
     let right = left.next;
     tmp.next = right;
-    left.next = right!.next
+    left.next = right!.next;
     right!.next = left;
     tmp = left;
   }

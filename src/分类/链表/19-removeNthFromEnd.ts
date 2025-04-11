@@ -1,5 +1,5 @@
-import { ListNode } from "../listnode";
-//计算链表长度
+import { ListNode } from "./listnode";
+// 计算链表长度
 // function getlength(head: ListNode | null) {
 //     let len = 0
 //     while (head !== null) {
@@ -24,7 +24,7 @@ import { ListNode } from "../listnode";
 
 // };
 
-//双指针    后指针比前指针多n
+//双指针    右指针比左指针多n
 function removeNthFromEnd(head: ListNode | null, n: number): ListNode | null {
   let dummy = new ListNode(0, head);
   let left: ListNode = dummy;

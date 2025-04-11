@@ -59,6 +59,14 @@ import { ListNode } from "./listnode";
 
 //     return dummy.next;
 // }
+/**
+ * 首先找到 链表的中间节点
+ * 然后分成两段
+ * 递归两段链表 
+ * 最后进行合并 两个有序链表
+ * @param head 
+ * @returns 
+ */
 function sortList(head: ListNode | null): ListNode | null {
   // 链表为空或只有一个节点，直接返回
   if (!head || !head.next) {
