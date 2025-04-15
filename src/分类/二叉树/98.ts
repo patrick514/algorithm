@@ -1,5 +1,6 @@
 import { register } from "ts-node";
-import { TreeNode } from "../../treenode";
+import { TreeNode } from "./treenode";
+
 
 // function isValidBST(root: TreeNode | null): boolean {
 //     //
