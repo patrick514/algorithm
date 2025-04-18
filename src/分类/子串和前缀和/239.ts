@@ -1,3 +1,9 @@
+/**
+ * 
+ * @param nums 
+ * @param k 
+ * @returns 
+ */
 function maxSlidingWindow(nums: number[], k: number): number[] {
 
     let res: number[] = [];

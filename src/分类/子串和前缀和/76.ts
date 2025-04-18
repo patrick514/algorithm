@@ -1,3 +1,9 @@
+/**
+ * 
+ * @param s 
+ * @param t 
+ * @returns 
+ */
 function minWindow(s: string, t: string): string {
     let need = new Map();
     let window = new Map();
