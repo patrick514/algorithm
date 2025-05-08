@@ -36,10 +36,26 @@ function getIntersectionNode(headA: ListNode | null, headB: ListNode | null): Li
 
 /**
  * 使用双指针
+ * a + c  = m
+ * b + c = n
+ * 两个指针都移动a + b + c
+ * pa和pb相同或都为空结束
+ * 某一个结束 比如pb=null 则pb设为pa
  * @param headA 
  * @param headB 
  * @returns 
  */
 function getIntersectionNode_twoPoints(headA: ListNode | null, headB: ListNode | null): ListNode | null {
-    
+    let pA = headA
+    let pB = headB
+    if(!pA || !pB){
+        return null
+    }
+
+    while(pA!== pB){
+        //注意是变为头节点
+        pB = pB === null ? headA : pB.next
+        pA = pA === null ? headB : pA.next
+    }
+    return pB
 };
