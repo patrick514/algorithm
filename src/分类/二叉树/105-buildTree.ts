@@ -1,9 +1,11 @@
-import { TreeNode } from "../../treenode";
+
 
 // function buildTree(preorder: number[], inorder: number[]): TreeNode | null {
 //     if (preorder.length === 0 || inorder.length === 0) {
 //         return null
 //     }
+
+import { TreeNode } from "./treenode"
 
 //     let rootval = preorder[0]
 //     let root = new TreeNode(rootval)
@@ -24,8 +26,9 @@ function buildTree(preorder: number[], inorder: number[]): TreeNode | null {
     let rootval = preorder[0]
     let index = inorder.indexOf(rootval)
     const root = new TreeNode(rootval)
+    //index是中序遍历中头节点的位置
     //注意是1，index+1，因为前序遍历，根在最前要去掉，1，index+1，index+1
-            // /    中序遍历 ，根在中间               0， index，index+1
+    //              中序遍历 ，根在中间               0， index，index+1
     //     3              前序preorder:   3  9  20 15 7        
     // 9      20          中序inorder :   9  3  15 20 7     
     //      15   7         slice 分割  左闭右开

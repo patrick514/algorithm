@@ -8,23 +8,38 @@ class ListNode {
     }
 }
 
-
+/**
+ * 使用哈希集合
+ * @param headA 
+ * @param headB 
+ * @returns 
+ */
 function getIntersectionNode(headA: ListNode | null, headB: ListNode | null): ListNode | null {
-    const amap = new Map();
-    const bmap = new Map();
+    const set = new Set()
     let a = headA;
     let b = headB;
     while(a !== null){
-        amap.set(a,1);
+        set.add(a);
         a = a.next;
     }
 
     while (b !== null) {
-        if(amap.get(b)){
+        if(set.has(b)){
             return b;
         }
         b =b.next;
     }
 
     return null;
+};
+
+
+/**
+ * 使用双指针
+ * @param headA 
+ * @param headB 
+ * @returns 
+ */
+function getIntersectionNode_twoPoints(headA: ListNode | null, headB: ListNode | null): ListNode | null {
+    
 };

@@ -1,6 +1,7 @@
-import { TreeNode } from "../../treenode";
 
 // function rightSideView(root: TreeNode | null): number[] {
+
+import { TreeNode } from "./treenode";
 
 //     if(!root){
 //         return []
