@@ -12,7 +12,7 @@
 //             left = mid + 1
 //         }else{
 //             // mid 不要减1
-//             right = mid 
+//             right = mid
 //         }
 
 //     }
@@ -40,5 +40,19 @@ function findMin(nums: number[]): number {
   return nums[left];
 }
 
+function findMin1(nums: number[]): number {
+  let left = 0;
+  let right = nums.length - 1;
+  //不取等 因为right 和left相等 会无限循环
+  while (left < right) {
+    let mid = Math.floor((right - left) / 2 + left);
+    if (nums[mid] > nums[right]) {
+      left = mid + 1;
+    } else {
+      right = mid;
+    }
+  }
+  return nums[left];
+}
 
-console.log(findMin([3, 4, 5, 1, 2]));
+console.log(findMin1([3, 1, 2]));

@@ -2,7 +2,7 @@
 //     let left,right
 //     let mid : number = 0
 //     left = 0;
-//     right = nums.length -1  
+//     right = nums.length -1
 
 //     while (left <= right) {
 //         mid = Math.floor((left + right) / 2);
@@ -14,28 +14,31 @@
 //         }
 //     }
 //     return left;
-   
+
 // };
 
+/**
+ * 搜索插入位置
+ * @param nums
+ * @param target
+ * @returns
+ */
 function searchInsert(nums: number[], target: number): number {
   let left = 0;
   let right = nums.length - 1;
 
   while (left <= right) {
-    //避免溢出
     let mid = Math.floor((right - left) / 2 + left);
-    if (nums[mid] < target) {
+    if (nums[mid] === target) {
+      return mid;
+    } else if (nums[mid] < target) {
       left = mid + 1;
-    }
-    //不管找没找到，mid等于target right是mid前一个，mid大于target，right也是mid前一个 
-    else {
-
+    } else {
       right = mid - 1;
     }
   }
-  //right 最终停在比 target 小的元素位置
-  return left;
-};
+  //为什么 left 循环结束 left = right + 1 left为最后小于target的后一个数
+  return left
+}
 
-
-console.log(searchInsert([1, 3, 5, 6],5))
+console.log(searchInsert([1, 3, 4, 6], 5));

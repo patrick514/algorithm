@@ -41,7 +41,13 @@
 //     }
 //     return [first,end]
 // };
-//两次二分
+
+/**
+ * 两次二分
+ * @param nums 
+ * @param target 
+ * @returns 
+ */
 function searchRange(nums: number[], target: number): number[] {
   let first = -1;
   let end = -1;

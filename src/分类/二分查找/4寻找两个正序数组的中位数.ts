@@ -1,3 +1,10 @@
+/**
+ * 寻找两个正序数组的中位数 
+ * 简单做法，合并在一个数组内
+ * @param nums1 
+ * @param nums2 
+ * @returns 
+ */
 function findMedianSortedArrays(nums1: number[], nums2: number[]): number {
   let n1 = 0;
   let n2 = 0;
@@ -26,9 +33,9 @@ function findMedianSortedArrays(nums1: number[], nums2: number[]): number {
   if (n3.length % 2 === 1) {
     ans = n3[Math.floor(n3.length / 2)];
   } else {
-    let a1 = n3[Math.floor(n3.length / 2)-1];
-    let a2 = n3[Math.floor(n3.length / 2) ];
-    ans = (a1 + a2)/2;
+    let a1 = n3[Math.floor(n3.length / 2) - 1];
+    let a2 = n3[Math.floor(n3.length / 2)];
+    ans = (a1 + a2) / 2;
   }
   return ans;
 }

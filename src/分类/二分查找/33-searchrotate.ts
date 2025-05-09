@@ -33,6 +33,12 @@
 //     return -1
 // };
 
+/**
+ * 判断那一半是有序的
+ * @param nums 
+ * @param target 
+ * @returns 
+ */
 function search(nums: number[], target: number): number {
   let left = 0;
   let right = nums.length - 1;
